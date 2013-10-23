@@ -16,7 +16,13 @@ if [[ $platform == "osx" ]]; then;
     export PATH="/usr/local/cuda/bin:${PATH}"
     export DYLD_LIBRARY_PATH="/usr/local/cuda/lib:${DYLD_LIBRARY_PATH}"
     #For Homebrew
-    export PATH="${HOME}/.homebrew/bin:${HOME}/.homebrew/sbin:${PATH}"
+    export PATH="${HOME}/.homebrew/bin:${HOME}/.homebrew/sbin:${HOME}/.homebrew/share/python:${PATH}"
+    #For Haskell
+    export PATH="${HOME}/Library/Haskell/bin:${PATH}"
+    #For Android
+    export PATH="${HOME}/Programming/android-sdk-macosx/tools:${PATH}"
+    export PATH="${HOME}/Programming/android-sdk-macosx/platform-tools:${PATH}"
+    export ANDROID_HOME="${HOME}/Programming/android-sdk-macosx"
 fi
 
 #For Google Go
