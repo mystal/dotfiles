@@ -1,15 +1,20 @@
 platform="unknown"
 unamestr=`uname`
-if [[ $unamestr == "Linux" ]]; then;
+if [[ $unamestr == "Linux" ]]; then
     platform="linux"
-elif [[ $unamestr == "Darwin" ]]; then;
+elif [[ $unamestr == "Darwin" ]]; then
     platform="osx"
 fi
 
 export EDITOR=vim
 export SVN_EDITOR=vim
 
-if [[ $platform == "osx" ]]; then;
+if [[ $platform == "linux" ]]; then
+    #Java, stop looking so ugly
+    export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
+fi
+
+if [[ $platform == "osx" ]]; then
     #For development tools
     export PATH="/Developer/usr/bin:${PATH}"
     #For CUDA
