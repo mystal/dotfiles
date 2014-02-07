@@ -1,54 +1,40 @@
 set nocompatible
-filetype off
 
-"""
+" PLUGINS
+" =======
+
 " Vundle
-"""
-set rtp+=~/.vim/bundle/vundle/
+filetype off
+set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
+Bundle 'gmarik/vundle'
 
-" let Vundle manage Vundle
-" required! 
-Bundle "gmarik/vundle"
-
-"""
-" Bundles
-"""
-" original repos on github
-"Bundle "wincent/Command-T"
+Bundle 'bling/vim-airline'
+let g:airline_powerline_fonts=0
+Bundle 'flazz/vim-colorschemes'
 Bundle "kien/ctrlp.vim"
 Bundle "Raimondi/delimitMate"
-Bundle "fholgado/minibufexpl.vim"
-"Bundle "kevinw/pyflakes-vim"
-"Bundle "marijnh/tern_for_vim"
-"Bundle "rstacruz/sparkup", {"rtp": "vim/"}
-"Bundle "Lokaltog/vim-easymotion"
-"Bundle "Shougo/unite.vim"
-"Bundle "tpope/vim-fugitive"
+Bundle "Lokaltog/vim-easymotion"
 Bundle "tpope/vim-markdown"
-"Bundle "tpope/vim-rails.git"
+Bundle "fholgado/minibufexpl.vim"
+"Bundle 'techlivezheng/vim-plugin-minibufexpl'
 Bundle "tpope/vim-surround"
 Bundle "Valloric/YouCompleteMe"
+let g:ycm_autoclose_preview_window_after_insertion=1
 
 " vim-scripts repos
-Bundle "Colour-Sampler-Pack"
-"Bundle "neocomplcache"
+"Bundle "Colour-Sampler-Pack"
 Bundle "Tagbar"
-"Bundle "TagHighlight"
-"Bundle "Syntastic"
-Bundle "VimClojure"
-"Bundle "ZenCoding.vim"
+let g:tagbar_left = 1
 
-" non github repos
-"Bundle "git://git.wincent.com/command-t.git"
 
-"""
-" General
-"""
+" SETTINGS
+" ========
+
+" Appearance
 "Remove all previous autocmds
 autocmd!
 
-"set nocompatible
 set modelines=0
 
 filetype plugin indent on
@@ -64,11 +50,13 @@ if has("gui_running") "||  &t_Co >= 256
 endif
 
 set autoread
-autocmd bufwritepost $MYVIMRC source $MYVIMRC
 
-"""
-" Interface
-"""
+" Filetype Support
+autocmd BufNewFile,BufRead *.cl set filetype=opencl
+autocmd BufNewFile,BufRead *.gradle set filetype=groovy
+autocmd BufNewFile,BufRead *.tex set spell
+
+" Behavior
 set laststatus=2
 
 set title
@@ -85,18 +73,16 @@ set nostartofline
 set hidden
 
 set visualbell
-set noerrorbells
 
 set nowrap
 set textwidth=79
 "set formatoptions=qrn1
-set formatoptions-=t
-"set colorcolumn=85
+set formatoptions-=tc
 
 set wildmenu
 set wildmode=list:longest
 
-set cot=menu,longest,preview
+"set cot=menu,longest,preview
 
 """
 " Indentation
@@ -105,46 +91,27 @@ set autoindent
 set nosmartindent
 
 set nojoinspaces
-set nofoldenable
 
+" TODO: overwrite on file-type basis
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
 set smarttab
 
-"""
-" Search/Replace
-"""
+" Search
+set gdefault
+set hlsearch
 set ignorecase
+set incsearch
+set magic
 set smartcase
 
-set magic
-
-set incsearch
-set hlsearch
-
-set gdefault
-
-"""
 " History and Backup
-"""
 set history=1000
 set nobackup
 
-"""
 " Keybindings
-"""
-let mapleader = ","
-
-map <F1> <nop>
-map <left> <nop>
-map <right> <nop>
-map <down> <nop>
-map <up> <nop>
-
-"set pastetoggle=<leader>p
-
 nnoremap j gj
 nnoremap k gk
 
@@ -153,13 +120,12 @@ noremap <C-e> $
 noremap! <C-a> <home>
 noremap! <C-e> <end>
 
-nnoremap <silent> <C-tab> :bn<cr>
-nnoremap <silent> <C-S-tab> :bp<cr>
+nmap <silent> <C-h> <C-w>h
+nmap <silent> <C-j> <C-w>j
+nmap <silent> <C-k> <C-w>k
+nmap <silent> <C-l> <C-w>l
 
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+let mapleader = ","
 
 nmap <leader>s :!
 
@@ -168,45 +134,4 @@ nmap <leader>d :bd<cr>
 nmap <leader>ev :e! $MYVIMRC<cr>
 nmap <silent> <leader>/ :nohlsearch<cr>
 
-"Plugin keybindings
-nmap <leader>g :TagbarToggle<cr>
-
-"""
-" Filetype Support
-"""
-autocmd BufNewFile,BufRead *.cl set filetype=opencl
-autocmd BufNewFile,BufRead *.tex set spell
-
-"""
-" Bundle Options
-"""
-" Ack
-" Bundle: https://github.com/mileszs/ack.vim
-
-" CSApprox
-" Bundle: https://github.com/vim-scripts/CSApprox
-
-" Latex Suite
-" Bundle: https://github.com/jcf/vim-latex
-"let g:tex_flavor = "latex"
-"let g:Tex_DefaultTargetFormat = "pdf"
-"let g:Tex_CompileRule_pdf = "rubber -d $*"
-
-" MiniBufExpl
-
-" neocomplcache
-"let g:neocomplcache_enable_at_startup = 1
-
-" SuperTab
-" Bundle: https://github.com/vim-scripts/SuperTab-continued.
-" let g:SuperTabDefaultCompletionType = "context"
-
-" Tagbar
-let g:tagbar_left = 1
-
-" YankRing
-" Bundle: https://github.com/vim-scripts/YankRing.vim
-" let g:yankring_history_dir = "$HOME/.vim"
-
-" ZenCoding
-"let g:user_zen_leader_key = "<leader>y"
+nmap ; :CtrlPBuffer<cr>
