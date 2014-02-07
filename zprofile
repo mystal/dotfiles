@@ -12,6 +12,7 @@ export SVN_EDITOR=vim
 if [[ $platform == "linux" ]]; then
     #Java, stop looking so ugly
     export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
+    export PATH="${HOME}/Programming/hugo:${PATH}"
 fi
 
 if [[ $platform == "osx" ]]; then
