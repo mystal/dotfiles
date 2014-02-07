@@ -3,6 +3,7 @@ fpath=(~/.zsh/functions $fpath)
 unsetopt beep
 unsetopt automenu
 setopt histignoredups
+setopt histignorespace
 
 autoload -U compinit
 compinit
