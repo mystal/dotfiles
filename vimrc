@@ -7,24 +7,24 @@ set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
-Bundle 'bling/vim-airline'
+Plugin 'bling/vim-airline'
 let g:airline_powerline_fonts=0
-Bundle 'flazz/vim-colorschemes'
-Bundle "kien/ctrlp.vim"
-Bundle "Raimondi/delimitMate"
-Bundle "Lokaltog/vim-easymotion"
-Bundle "tpope/vim-markdown"
-Bundle "fholgado/minibufexpl.vim"
-"Bundle 'techlivezheng/vim-plugin-minibufexpl'
-Bundle "tpope/vim-surround"
-Bundle "Valloric/YouCompleteMe"
+Plugin 'flazz/vim-colorschemes'
+Plugin 'kien/ctrlp.vim'
+Plugin 'Raimondi/delimitMate'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'tpope/vim-markdown'
+Plugin 'fholgado/minibufexpl.vim'
+"Plugin 'techlivezheng/vim-plugin-minibufexpl'
+Plugin 'tpope/vim-surround'
+Plugin 'Valloric/YouCompleteMe'
 let g:ycm_autoclose_preview_window_after_insertion=1
 
 " vim-scripts repos
-"Bundle "Colour-Sampler-Pack"
-Bundle "Tagbar"
+"Plugin 'Colour-Sampler-Pack'
+Plugin 'Tagbar'
 let g:tagbar_left = 1
 
 
