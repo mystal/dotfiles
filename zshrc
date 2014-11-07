@@ -63,3 +63,8 @@ else
     alias ls="ls --color=always"
 fi
 alias visudo="sudo EDITOR=vim visudo"
+
+# Disable terminal input start/stop
+stty start ''
+stty stop ''
+stty -ixoff
