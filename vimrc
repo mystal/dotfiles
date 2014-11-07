@@ -5,19 +5,24 @@ set nocompatible
 
 " Vundle
 filetype off
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
-Plugin 'gmarik/vundle'
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
 
 Plugin 'bling/vim-airline'
-let g:airline_powerline_fonts=0
+let g:airline_powerline_fonts=1
+let g:airline#extensions#tabline#enabled = 1
+"Plugin 'cwoac/nvim'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'kien/ctrlp.vim'
 Plugin 'Raimondi/delimitMate'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'tpope/vim-markdown'
-Plugin 'fholgado/minibufexpl.vim'
+"Plugin 'fholgado/minibufexpl.vim'
 "Plugin 'techlivezheng/vim-plugin-minibufexpl'
+Plugin 'peterhoeg/vim-qml'
+Plugin 'wting/rust.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'Valloric/YouCompleteMe'
 let g:ycm_autoclose_preview_window_after_insertion=1
@@ -26,6 +31,8 @@ let g:ycm_autoclose_preview_window_after_insertion=1
 "Plugin 'Colour-Sampler-Pack'
 Plugin 'Tagbar'
 let g:tagbar_left = 1
+
+call vundle#end()
 
 
 " SETTINGS
@@ -50,6 +57,7 @@ if has("gui_running") "||  &t_Co >= 256
 endif
 
 set autoread
+autocmd BufWinEnter * checktime
 
 " Filetype Support
 autocmd BufNewFile,BufRead *.cl set filetype=opencl
