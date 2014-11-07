@@ -13,6 +13,10 @@ bindkey -e
 
 typeset -A key
 
+if type keychain &> /dev/null; then
+    eval $(keychain --eval --agents ssh -Q --quiet wheatley_rsa)
+fi
+
 key[Home]=${terminfo[khome]}
 key[End]=${terminfo[kend]}
 key[Insert]=${terminfo[kich1]}
@@ -47,7 +51,7 @@ C_CLEAR="%{$terminfo[sgr0]%}"
 PS1="${C_GREEN}[${C_YELLOW}%n${C_GREEN}@${C_CYAN}%m ${C_BLUE}%1~${C_GREEN}]%(!.${C_RED}#.$)${C_CLEAR} "
 RPS1="${C_GREEN}(${C_YELLOW}%*${C_GREEN})${C_CLEAR}"
 
-HISTSIZE=2000
+HISTSIZE=10000
 HISTFILE=~/.zsh_history
 SAVEHIST=${HISTSIZE}
 
