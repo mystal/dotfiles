@@ -21,9 +21,11 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'tpope/vim-markdown'
 "Plugin 'fholgado/minibufexpl.vim'
 "Plugin 'techlivezheng/vim-plugin-minibufexpl'
+"Plugin 'klen/python-mode'
 Plugin 'peterhoeg/vim-qml'
 Plugin 'wting/rust.vim'
 Plugin 'tpope/vim-surround'
+"Plugin 'cespare/vim-toml'
 Plugin 'Valloric/YouCompleteMe'
 let g:ycm_autoclose_preview_window_after_insertion=1
 
@@ -58,11 +60,6 @@ endif
 
 set autoread
 autocmd BufWinEnter * checktime
-
-" Filetype Support
-autocmd BufNewFile,BufRead *.cl set filetype=opencl
-autocmd BufNewFile,BufRead *.gradle set filetype=groovy
-autocmd BufNewFile,BufRead *.tex set spell
 
 " Behavior
 set laststatus=2
@@ -143,3 +140,10 @@ nmap <leader>ev :e! $MYVIMRC<cr>
 nmap <silent> <leader>/ :nohlsearch<cr>
 
 nmap ; :CtrlPBuffer<cr>
+
+" Filetype Support
+autocmd BufNewFile,BufRead *.cl set filetype=opencl
+autocmd BufNewFile,BufRead *.gradle set filetype=groovy
+autocmd BufNewFile,BufRead *.tex set spell
+
+autocmd FileType lua setlocal shiftwidth=2 softtabstop=2 expandtab
