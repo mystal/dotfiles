@@ -25,7 +25,7 @@ Plugin 'tpope/vim-markdown'
 Plugin 'peterhoeg/vim-qml'
 Plugin 'wting/rust.vim'
 Plugin 'tpope/vim-surround'
-"Plugin 'cespare/vim-toml'
+Plugin 'cespare/vim-toml'
 Plugin 'Valloric/YouCompleteMe'
 let g:ycm_autoclose_preview_window_after_insertion=1
 
