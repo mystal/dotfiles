@@ -6,6 +6,13 @@ elif [[ $unamestr == "Darwin" ]]; then
     platform="osx"
 fi
 
+if type termite &> /dev/null; then
+    export TERMINAL=termite
+elif type terminology &> /dev/null; then
+    export TERMINAL=terminology
+fi
+
+export VISUAL=vim
 export EDITOR=vim
 export SVN_EDITOR=vim
 
