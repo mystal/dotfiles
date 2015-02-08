@@ -7,7 +7,7 @@ allow_bold = true
 dynamic_title = true
 urgent_on_bell = true
 clickable_url = true
-font = Source Code Pro 10
+font = Source Code Pro 9
 scrollback_lines = 5000
 search_wrap = true
 #icon_name = terminal
@@ -37,8 +37,7 @@ foreground = #c5c8c6
 foreground_bold = #ffffff
 background = #1d1f21
 
-# 20% background transparency (requires a compositor)
-#background = rgba(63, 63, 63, 0.8)
+background = rgba(29, 31, 33, 0.95)
 
 # if unset, will reverse foreground and background
 #highlight = #d6d6d6
