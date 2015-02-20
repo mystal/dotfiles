@@ -1,0 +1,29 @@
+- clean: ['~', '~/.config']
+- link:
+    ~/.config/cower:
+        create: true
+        path: config/cower
+    #~/.dotfiles: ''
+    ~/.gitconfig: gitconfig
+    #~/.gitignore_global: gitignore_global
+    ~/.gvimrc: gvimrc
+    ~/.config/i3:
+        create: true
+        path: config/i3
+    ~/.config/i3status:
+        create: true
+        path: config/i3status
+    ~/.config/pacaur:
+        create: true
+        path: config/pacaur
+    #~/.screenrc: screenrc
+    ~/.config/termite:
+        create: true
+        path: config/termite
+    ~/.tmux.conf: tmux.conf
+    ~/.vimrc: vimrc
+    #~/.zsh: zsh/
+    ~/.zprofile: zprofile
+    ~/.zshrc: zshrc
+#- shell:
+    #- git update-submodules # after linking ~/.gitconfig
