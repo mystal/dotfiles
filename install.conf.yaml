@@ -1,5 +1,8 @@
 - clean: ['~', '~/.config']
 - link:
+    ~/.antigen/antigen.zsh:
+        create: true
+        path: antigen/antigen.zsh
     ~/.config/cower:
         create: true
         path: config/cower
