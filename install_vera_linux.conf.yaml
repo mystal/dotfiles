@@ -6,16 +6,19 @@
     ~/.config/cower:
         create: true
         path: config/cower
+    ~/.config/dunst:
+        create: true
+        path: config/dunst
     #~/.dotfiles: ''
     ~/.gitconfig: gitconfig
     #~/.gitignore_global: gitignore_global
     ~/.gvimrc: gvimrc
     ~/.config/i3:
         create: true
-        path: config/i3_eureka
+        path: config/i3_vera
     ~/.config/i3status:
         create: true
-        path: config/i3status_eureka
+        path: config/i3status_vera
     ~/.config/pacaur:
         create: true
         path: config/pacaur
