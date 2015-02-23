@@ -1,10 +1,14 @@
-platform="unknown"
-unamestr=`uname`
-if [[ $unamestr == "Linux" ]]; then
-    platform="linux"
-elif [[ $unamestr == "Darwin" ]]; then
-    platform="osx"
-fi
+function parse_ostype {
+    case "$OSTYPE" in
+        solaris*) echo "solaris" ;;
+        darwin*)  echo "osx" ;;
+        linux*)   echo "linux" ;;
+        bsd*)     echo "bsd" ;;
+        *)        echo "unknown" ;;
+    esac
+}
+
+platform=$(parse_ostype)
 
 if type termite &> /dev/null; then
     export TERMINAL=termite

@@ -2,8 +2,23 @@
 
 set -e
 
-CONFIG="install.conf.yaml"
+function parse_ostype {
+    case "$OSTYPE" in
+        solaris*) echo "solaris" ;;
+        darwin*)  echo "osx" ;;
+        linux*)   echo "linux" ;;
+        bsd*)     echo "bsd" ;;
+        *)        echo "unknown" ;;
+    esac
+}
+
+host=(${HOSTNAME//./ })
+platform=$(parse_ostype)
+
+CONFIG="install_${host[0]}_${platform}.conf.yaml"
 DOTBOT_DIR="dotbot"
+
+echo "Using config: ${CONFIG}"
 
 DOTBOT_BIN="bin/dotbot"
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
