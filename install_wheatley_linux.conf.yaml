@@ -1,0 +1,23 @@
+- clean: ['~', '~/.config']
+- link:
+    ~/.antigen/antigen.zsh:
+        create: true
+        path: antigen/antigen.zsh
+    ~/.config/cower:
+        create: true
+        path: config/cower
+    #~/.dotfiles: ''
+    ~/.gitconfig: gitconfig
+    #~/.gitignore_global: gitignore_global
+    ~/.gvimrc: gvimrc
+    ~/.config/pacaur:
+        create: true
+        path: config/pacaur_wheatley
+    #~/.screenrc: screenrc
+    ~/.tmux.conf: tmux.conf
+    ~/.vimrc: vimrc
+    #~/.zsh: zsh/
+    ~/.zprofile: zprofile
+    ~/.zshrc: zshrc
+#- shell:
+    #- git update-submodules # after linking ~/.gitconfig
