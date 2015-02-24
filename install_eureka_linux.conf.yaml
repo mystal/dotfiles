@@ -6,6 +6,9 @@
     ~/.config/cower:
         create: true
         path: config/cower
+    ~/.config/dunst:
+        create: true
+        path: config/dunst
     #~/.dotfiles: ''
     ~/.gitconfig: gitconfig
     #~/.gitignore_global: gitignore_global
