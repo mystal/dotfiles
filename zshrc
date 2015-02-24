@@ -1,3 +1,5 @@
+source ~/.antigen/antigen.zsh
+
 fpath=(~/.zsh/functions $fpath)
 
 unsetopt beep
@@ -15,6 +17,12 @@ typeset -A key
 
 if type keychain &> /dev/null; then
     eval $(keychain --eval --agents ssh -Q --quiet wheatley_rsa)
+fi
+
+if type virtualenvwrapper_lazy.sh &> /dev/null; then
+    source virtualenvwrapper_lazy.sh
+elif type virtualenvwrapper.sh &> /dev/null; then
+    source virtualenvwrapper.sh
 fi
 
 key[Home]=${terminfo[khome]}
