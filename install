@@ -15,7 +15,8 @@ function parse_ostype {
 host=(${HOSTNAME//./ })
 platform=$(parse_ostype)
 
-CONFIG="install_${host[0]}_${platform}.conf.yaml"
+CONFIG_DIR="dotbot_configs"
+CONFIG="${CONFIG_DIR}/install_${host[0]}_${platform}.conf.yaml"
 DOTBOT_DIR="dotbot"
 
 echo "Using config: ${CONFIG}"
