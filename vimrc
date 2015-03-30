@@ -3,39 +3,35 @@ set nocompatible
 " PLUGINS
 " =======
 
-" Vundle
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/bundle')
 
-Plugin 'gmarik/Vundle.vim'
-
-Plugin 'bling/vim-airline'
+Plug 'bling/vim-airline'
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1
-"Plugin 'cwoac/nvim'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'kien/ctrlp.vim'
-Plugin 'Raimondi/delimitMate'
-Plugin 'Lokaltog/vim-easymotion'
-"Plugin 'fatih/vim-go'
-Plugin 'tpope/vim-markdown'
-"Plugin 'fholgado/minibufexpl.vim'
-"Plugin 'techlivezheng/vim-plugin-minibufexpl'
-"Plugin 'klen/python-mode'
-Plugin 'peterhoeg/vim-qml'
-Plugin 'wting/rust.vim'
-Plugin 'tpope/vim-surround'
-Plugin 'cespare/vim-toml'
-Plugin 'Valloric/YouCompleteMe'
+"Plug 'cwoac/nvim'
+Plug 'flazz/vim-colorschemes'
+Plug 'kien/ctrlp.vim'
+Plug 'Raimondi/delimitMate'
+Plug 'Lokaltog/vim-easymotion'
+"Plug 'airblade/vim-gitgutter'
+"Plug 'fatih/vim-go'
+Plug 'tpope/vim-markdown'
+"Plug 'fholgado/minibufexpl.vim'
+"Plug 'techlivezheng/vim-plugin-minibufexpl'
+"Plug 'klen/python-mode'
+Plug 'peterhoeg/vim-qml'
+Plug 'wting/rust.vim'
+Plug 'tpope/vim-surround'
+Plug 'cespare/vim-toml'
+Plug 'Valloric/YouCompleteMe'
 let g:ycm_autoclose_preview_window_after_insertion=1
 
 " vim-scripts repos
-"Plugin 'Colour-Sampler-Pack'
-Plugin 'Tagbar'
+"Plug 'Colour-Sampler-Pack'
+Plug 'Tagbar'
 let g:tagbar_left = 1
 
-call vundle#end()
+call plug#end()
 
 
 " SETTINGS
@@ -47,13 +43,9 @@ autocmd!
 
 set modelines=0
 
-filetype plugin indent on
-
 set background=dark
 
-if &t_Co > 2 || has("gui_running")
-    syntax on
-endif
+syntax on
 
 if has("gui_running") "||  &t_Co >= 256
     colorscheme jellybeans
