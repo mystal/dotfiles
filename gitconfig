@@ -3,3 +3,5 @@
 	email = reitaka@gmail.com
 [push]
 	default = simple
+[core]
+	excludesfile = /home/mystal/.gitignore_global
