@@ -11,6 +11,7 @@ let g:airline#extensions#tabline#enabled = 1
 "Plug 'cwoac/nvim'
 Plug 'flazz/vim-colorschemes'
 Plug 'kien/ctrlp.vim'
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 Plug 'Raimondi/delimitMate'
 Plug 'Lokaltog/vim-easymotion'
 "Plug 'airblade/vim-gitgutter'
