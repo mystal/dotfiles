@@ -11,7 +11,7 @@
         path: config/dunst
     #~/.dotfiles: ''
     ~/.gitconfig: gitconfig
-    #~/.gitignore_global: gitignore_global
+    ~/.gitignore_global: gitignore_global
     ~/.gvimrc: gvimrc
     ~/.config/i3:
         create: true

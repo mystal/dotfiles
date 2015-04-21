@@ -5,7 +5,7 @@
         path: antigen/antigen.zsh
     #~/.dotfiles: ''
     ~/.gitconfig: gitconfig
-    #~/.gitignore_global: gitignore_global
+    ~/.gitignore_global: gitignore_global
     #~/.gvimrc: gvimrc
     #~/.screenrc: screenrc
     ~/.tmux.conf: tmux.conf

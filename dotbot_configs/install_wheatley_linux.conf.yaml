@@ -8,7 +8,7 @@
         path: config/cower
     #~/.dotfiles: ''
     ~/.gitconfig: gitconfig
-    #~/.gitignore_global: gitignore_global
+    ~/.gitignore_global: gitignore_global
     ~/.gvimrc: gvimrc
     ~/.config/pacaur:
         create: true
