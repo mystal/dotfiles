@@ -1,5 +1,3 @@
-source ~/.antigen/antigen.zsh
-
 fpath=(~/.zsh/functions $fpath)
 
 unsetopt beep
@@ -47,7 +45,7 @@ key[PageDown]=${terminfo[knp]}
 [[ -n "${key[PageUp]}"   ]] && bindkey "${key[PageUp]}"   beginning-of-history
 [[ -n "${key[PageDown]}" ]] && bindkey "${key[PageDown]}" end-of-history
 
-if [[ "$terminfo[colors]" -ge 8 ]]; then                                        
+if [[ "$terminfo[colors]" -ge 8 ]]; then
     colors
 fi
 for color in RED GREEN YELLOW BLUE MAGENTA CYAN WHITE; do
