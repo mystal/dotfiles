@@ -1,3 +1,11 @@
+source "$HOME/.zgen/zgen.zsh"
+
+if ! zgen saved; then
+  zgen load sindresorhus/pure
+
+  zgen save
+fi
+
 fpath=(~/.zsh/functions $fpath)
 
 unsetopt beep
@@ -52,10 +60,10 @@ for color in RED GREEN YELLOW BLUE MAGENTA CYAN WHITE; do
     eval C_$color='%{$terminfo[bold]$fg[${(L)color}]%}'
     eval C_LIGHT_$color='%{$fg[${(L)color}]%}'
 done
-C_CLEAR="%{$terminfo[sgr0]%}"
+#C_CLEAR="%{$terminfo[sgr0]%}"
 
-PS1="${C_GREEN}[${C_YELLOW}%n${C_GREEN}@${C_CYAN}%m ${C_BLUE}%1~${C_GREEN}]%(!.${C_RED}#.$)${C_CLEAR} "
-RPS1="${C_GREEN}(${C_YELLOW}%*${C_GREEN})${C_CLEAR}"
+#PS1="${C_GREEN}[${C_YELLOW}%n${C_GREEN}@${C_CYAN}%m ${C_BLUE}%1~${C_GREEN}]%(!.${C_RED}#.$)${C_CLEAR} "
+#RPS1="${C_GREEN}(${C_YELLOW}%*${C_GREEN})${C_CLEAR}"
 
 HISTSIZE=10000
 HISTFILE=~/.zsh_history
