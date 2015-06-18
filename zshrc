@@ -1,7 +1,8 @@
 source "$HOME/.zgen/zgen.zsh"
 
 if ! zgen saved; then
-  zgen load sindresorhus/pure
+  zgen load sindresorhus/pure async.zsh
+  zgen load sindresorhus/pure pure.zsh
 
   zgen save
 fi
