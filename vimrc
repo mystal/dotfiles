@@ -15,6 +15,7 @@ let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclu
 Plug 'Raimondi/delimitMate'
 Plug 'Lokaltog/vim-easymotion'
 "Plug 'airblade/vim-gitgutter'
+Plug 'tikhomirov/vim-glsl'
 "Plug 'fatih/vim-go'
 Plug 'tpope/vim-markdown'
 "Plug 'fholgado/minibufexpl.vim'
