@@ -3,16 +3,25 @@
     ~/.config/cower:
         create: true
         path: config/cower
+    ~/.config/compton.conf:
+        create: true
+        path: config/compton.conf
     ~/.config/dunst:
         create: true
         path: config/dunst
     #~/.dotfiles: ''
+    ~/.config/fish:
+        create: true
+        path: config/fish_eureka
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
     ~/.gvimrc: gvimrc
     ~/.config/i3:
         create: true
         path: config/i3_eureka
+    ~/.config/i3blocks:
+        create: true
+        path: config/i3blocks_eureka
     ~/.config/i3status:
         create: true
         path: config/i3status_eureka
