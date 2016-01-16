@@ -10,19 +10,21 @@ let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1
 "Plug 'cwoac/nvim'
 Plug 'flazz/vim-colorschemes'
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 Plug 'Raimondi/delimitMate'
 Plug 'Lokaltog/vim-easymotion'
+Plug 'dag/vim-fish'
 "Plug 'airblade/vim-gitgutter'
 Plug 'tikhomirov/vim-glsl'
 "Plug 'fatih/vim-go'
+"Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-markdown'
 "Plug 'fholgado/minibufexpl.vim'
 "Plug 'techlivezheng/vim-plugin-minibufexpl'
 "Plug 'klen/python-mode'
 Plug 'peterhoeg/vim-qml'
-Plug 'wting/rust.vim'
+Plug 'rust-lang/rust.vim'
 Plug 'tpope/vim-surround'
 Plug 'cespare/vim-toml'
 Plug 'Valloric/YouCompleteMe'
@@ -142,3 +144,5 @@ autocmd BufNewFile,BufRead *.gradle set filetype=groovy
 autocmd BufNewFile,BufRead *.tex set spell
 
 autocmd FileType lua setlocal shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType go setlocal shiftwidth=4 softtabstop=4 noexpandtab
+autocmd FileType html,javascript,json setlocal shiftwidth=2 softtabstop=2 expandtab

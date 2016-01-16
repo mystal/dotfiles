@@ -39,7 +39,7 @@ bindsym $mod+shift+d exec --no-startup-id rofi -show run
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu='rofi -dmenu' --term='i3-sensible-terminal'
+bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu='rofi -dmenu -i' --term='i3-sensible-terminal'
 
 # change focus
 bindsym $mod+$left focus left
@@ -159,8 +159,13 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         position top
-        status_command i3status
+        #status_command i3status
+        #status_command py3status
+        status_command i3blocks
 }
+
+for_window [title="Biscuit Baker"] floating enable
+for_window [title="isengard"] floating enable
 
 bindsym $mod+ctrl+l exec --no-startup-id i3lock
 
@@ -176,8 +181,8 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pulseaudio-ctl down
 
 # Startup Applications
 exec --no-startup-id lxqt-policykit-agent
-exec --no-startup-id pasystray
 exec --no-startup-id nitrogen --restore
-exec --no-startup-id dropbox
-#exec --no-startup-id insync start
 exec --no-startup-id compton
+exec --no-startup-id dropbox
+exec --no-startup-id pasystray
+exec --no-startup-id redshift-gtk
