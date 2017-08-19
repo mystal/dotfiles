@@ -37,10 +37,10 @@ Plug 'jacoborus/tender.vim'
 Plug 'Valloric/YouCompleteMe'
 let g:ycm_autoclose_preview_window_after_insertion=1
 
-" vim-scripts repos
+" vim-scripts repos (DEPRECATED)
 "Plug 'Colour-Sampler-Pack'
-Plug 'Tagbar'
-let g:tagbar_left = 1
+"Plug 'Tagbar'
+"let g:tagbar_left = 1
 
 call plug#end()
 
@@ -53,6 +53,8 @@ call plug#end()
 autocmd!
 
 set modelines=0
+
+set mouse=a
 
 " Enable true color support
 if (has("nvim"))
