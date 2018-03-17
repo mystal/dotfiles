@@ -1,0 +1,33 @@
+- clean: ['~', '~/.config']
+- link:
+    ~/.config/cower:
+        create: true
+        path: config/cower
+    #~/.config/compton.conf:
+    #    create: true
+    #    path: config/compton.conf
+    #~/.config/dunst:
+    #    create: true
+    #    path: config/dunst
+    #~/.dotfiles: ''
+    #~/.config/fish:
+    #    create: true
+    #    path: config/fish_tizo
+    ~/.gitconfig: gitconfig
+    ~/.gitignore_global: gitignore_global
+    #~/.gvimrc: gvimrc
+    #~/.config/i3:
+    #    create: true
+    #    path: config/i3_tizo
+    #~/.config/i3blocks:
+    #    create: true
+    #    path: config/i3blocks_tizo
+    #~/.config/i3status:
+    #    create: true
+    #    path: config/i3status_tizo
+    ~/.config/pacaur:
+        create: true
+        path: config/pacaur
+    #~/.screenrc: screenrc
+    ~/.tmux.conf: tmux.conf
+    ~/.vimrc: vimrc

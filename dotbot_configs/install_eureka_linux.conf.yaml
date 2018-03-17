@@ -34,9 +34,5 @@
         path: config/termite
     ~/.tmux.conf: tmux.conf
     ~/.vimrc: vimrc
-    ~/.zgen: zgen
-    #~/.zsh: zsh/
-    ~/.zprofile: zprofile
-    ~/.zshrc: zshrc
 #- shell:
     #- git update-submodules # after linking ~/.gitconfig
