@@ -8,14 +8,18 @@ call plug#begin('~/.vim/bundle')
 Plug 'bling/vim-airline'
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1
+Plug 'w0rp/ale'
 Plug 'chriskempson/base16-vim'
 Plug 'tpope/vim-commentary'
 Plug 'OrangeT/vim-csharp'
 Plug 'ctrlpvim/ctrlp.vim'
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+let g:ctrlp_use_caching = 0
+"let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 Plug 'Raimondi/delimitMate'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'editorconfig/editorconfig'
+Plug 'Yggdroot/indentLine'
 "Plug 'lambdatoast/elm.vim'
 "Plug 'dag/vim-fish'
 "Plug 'airblade/vim-gitgutter'
@@ -30,8 +34,10 @@ Plug 'sheerun/vim-polyglot'
 "Plug 'klen/python-mode'
 "Plug 'peterhoeg/vim-qml'
 "Plug 'rust-lang/rust.vim'
+"Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-surround'
 "Plug 'keith/swift.vim'
+"Plug 'wellle/targets.vim'
 Plug 'jacoborus/tender.vim'
 "Plug 'cespare/vim-toml'
 Plug 'Valloric/YouCompleteMe'
