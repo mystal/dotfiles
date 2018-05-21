@@ -22,9 +22,9 @@
     #~/.config/i3blocks:
     #    create: true
     #    path: config/i3blocks_tizo
-    #~/.config/i3status:
-    #    create: true
-    #    path: config/i3status_tizo
+    ~/.config/i3status:
+        create: true
+        path: config/i3status_tizo
     ~/.config/pacaur:
         create: true
         path: config/pacaur
