@@ -33,6 +33,9 @@ ethernet _first_ {
 
 battery all {
     format = "%status %percentage %remaining"
+    status_chr = "⚡"
+    status_bat = "🔋"
+    status_unk = "?"
 }
 
 run_watch DHCP {
@@ -56,8 +59,8 @@ disk "/" {
 }
 
 volume master {
-    format = "♪: %volume"
-    format_muted = "♪: (%volume)"
+    format = "♪ %volume"
+    format_muted = "♪ (%volume)"
     device = "default"
     mixer = "Master"
     mixer_idx = 0
