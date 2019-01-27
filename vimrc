@@ -9,39 +9,42 @@ Plug 'bling/vim-airline'
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1
 Plug 'w0rp/ale'
+Plug 'jiangmiao/auto-pairs'
 Plug 'chriskempson/base16-vim'
 Plug 'tpope/vim-commentary'
 Plug 'OrangeT/vim-csharp'
+" TODO: Replace ctrlp with fzf?
 Plug 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
 let g:ctrlp_use_caching = 0
-"let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-Plug 'Raimondi/delimitMate'
+"Plug 'ryanoasis/vim-devicons'
 Plug 'Lokaltog/vim-easymotion'
-Plug 'editorconfig/editorconfig'
+Plug 'editorconfig/editorconfig-vim'
+"Plug 'junegunn/fzf.vim'
+"Plug 'mhinz/vim-grepper'
 Plug 'Yggdroot/indentLine'
 "Plug 'lambdatoast/elm.vim'
 "Plug 'dag/vim-fish'
 "Plug 'airblade/vim-gitgutter'
 "Plug 'tikhomirov/vim-glsl'
-"Plug 'fatih/vim-go'
 "Plug 'sjl/gundo.vim'
-"Plug 'udalov/kotlin-vim'
 "Plug 'tpope/vim-markdown'
 Plug 'rakr/vim-one'
 Plug 'joshdick/onedark.vim'
 Plug 'sheerun/vim-polyglot'
+" Don't conceal syntax in Markdown files.
+let g:vim_markdown_conceal = 0
 "Plug 'klen/python-mode'
-"Plug 'peterhoeg/vim-qml'
-"Plug 'rust-lang/rust.vim'
+"Plug 'tpope/vim-sensible'
 "Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-surround'
-"Plug 'keith/swift.vim'
 "Plug 'wellle/targets.vim'
 Plug 'jacoborus/tender.vim'
 "Plug 'cespare/vim-toml'
+"Plug 'lluchs/vim-wren'
 Plug 'Valloric/YouCompleteMe'
 let g:ycm_autoclose_preview_window_after_insertion=1
+"Plug 'KabbAmine/zeavim.vim'
 
 " vim-scripts repos (DEPRECATED)
 "Plug 'Colour-Sampler-Pack'
@@ -155,13 +158,13 @@ nmap <silent> <C-j> <C-w>j
 nmap <silent> <C-k> <C-w>k
 nmap <silent> <C-l> <C-w>l
 
-let mapleader = ","
+let mapleader = ','
 
 nmap <leader>s :!
 
 nmap <leader>w :w<cr>
 nmap <leader>d :bd<cr>
-nmap <leader>ev :e! $MYVIMRC<cr>
+nmap <leader>ev :e! ~/.vimrc<cr>
 nmap <silent> <leader>/ :nohlsearch<cr>
 
 nmap ; :CtrlPBuffer<cr>
@@ -170,7 +173,3 @@ nmap ; :CtrlPBuffer<cr>
 "autocmd BufNewFile,BufRead *.cl set filetype=opencl
 "autocmd BufNewFile,BufRead *.gradle set filetype=groovy
 autocmd BufNewFile,BufRead *.tex set spell
-
-autocmd FileType lua setlocal shiftwidth=2 softtabstop=2 expandtab
-autocmd FileType go setlocal shiftwidth=4 softtabstop=4 noexpandtab
-autocmd FileType html,javascript,json setlocal shiftwidth=2 softtabstop=2 expandtab
