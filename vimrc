@@ -23,10 +23,7 @@ Plug 'editorconfig/editorconfig-vim'
 "Plug 'junegunn/fzf.vim'
 "Plug 'mhinz/vim-grepper'
 Plug 'Yggdroot/indentLine'
-"Plug 'lambdatoast/elm.vim'
-"Plug 'dag/vim-fish'
 "Plug 'airblade/vim-gitgutter'
-"Plug 'tikhomirov/vim-glsl'
 "Plug 'sjl/gundo.vim'
 "Plug 'tpope/vim-markdown'
 Plug 'rakr/vim-one'
@@ -40,16 +37,10 @@ let g:vim_markdown_conceal = 0
 Plug 'tpope/vim-surround'
 "Plug 'wellle/targets.vim'
 Plug 'jacoborus/tender.vim'
-"Plug 'cespare/vim-toml'
 "Plug 'lluchs/vim-wren'
 Plug 'Valloric/YouCompleteMe'
 let g:ycm_autoclose_preview_window_after_insertion=1
 "Plug 'KabbAmine/zeavim.vim'
-
-" vim-scripts repos (DEPRECATED)
-"Plug 'Colour-Sampler-Pack'
-"Plug 'Tagbar'
-"let g:tagbar_left = 1
 
 call plug#end()
 
@@ -145,8 +136,8 @@ set history=1000
 set nobackup
 
 " Keybindings
-nnoremap j gj
-nnoremap k gk
+nnoremap <silent> j gj
+nnoremap <silent> k gk
 
 noremap <C-a> ^
 noremap <C-e> $
@@ -157,6 +148,9 @@ nmap <silent> <C-h> <C-w>h
 nmap <silent> <C-j> <C-w>j
 nmap <silent> <C-k> <C-w>k
 nmap <silent> <C-l> <C-w>l
+
+nmap <silent> J <Plug>(ale_next_wrap)
+nmap <silent> K <Plug>(ale_previous_wrap)
 
 let mapleader = ','
 
