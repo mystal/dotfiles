@@ -8,9 +8,17 @@ call plug#begin('~/.vim/bundle')
 Plug 'bling/vim-airline'
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1
-Plug 'w0rp/ale'
+"Plug 'w0rp/ale'
+"let g:ale_linters = {'rust': ['rls', 'cargo']}
+"let g:ale_sign_error = '⮿'
+"let g:ale_sign_info = '🛈'
+"let g:ale_sign_warning = '⯅'
+"let g:ale_rust_cargo_use_clippy = executable('cargo-clippy')
+"let g:ale_rust_rls_executable = 'ra_lsp_server'
+"let g:ale_rust_rls_toolchain = ''
 Plug 'jiangmiao/auto-pairs'
 Plug 'chriskempson/base16-vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-commentary'
 Plug 'OrangeT/vim-csharp'
 " TODO: Replace ctrlp with fzf?
@@ -33,17 +41,17 @@ Plug 'sheerun/vim-polyglot'
 let g:vim_markdown_conceal = 0
 "Plug 'klen/python-mode'
 "Plug 'tpope/vim-sensible'
+"Plug 'trusktr/seti.vim'
 "Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-surround'
 "Plug 'wellle/targets.vim'
 Plug 'jacoborus/tender.vim'
 "Plug 'lluchs/vim-wren'
-Plug 'Valloric/YouCompleteMe'
-let g:ycm_autoclose_preview_window_after_insertion=1
+"Plug 'Valloric/YouCompleteMe'
+"let g:ycm_autoclose_preview_window_after_insertion=1
 "Plug 'KabbAmine/zeavim.vim'
 
 call plug#end()
-
 
 " SETTINGS
 " ========
@@ -68,20 +76,27 @@ if (has("termguicolors"))
     set termguicolors
 endif
 
-set background=dark
+syntax enable
 
-syntax on
+set background=dark
 
 "colorscheme base16-tomorrow-night
 colorscheme one
 "colorscheme onedark
 "colorscheme tender
 
+" Disable background color to use the transparent terminal background.
+"hi Normal guibg=NONE ctermbg=NONE
+
+let g:airline_theme='one'
+
 set autoread
 autocmd BufWinEnter * checktime
 
 " Behavior
 set laststatus=2
+
+set updatetime=300
 
 set title
 set ruler
@@ -90,7 +105,7 @@ set showcmd
 set showmode
 set nonumber
 set numberwidth=1
-set shortmess=atToO
+set shortmess=atToOc
 
 set nostartofline
 
@@ -149,8 +164,12 @@ nmap <silent> <C-j> <C-w>j
 nmap <silent> <C-k> <C-w>k
 nmap <silent> <C-l> <C-w>l
 
-nmap <silent> J <Plug>(ale_next_wrap)
-nmap <silent> K <Plug>(ale_previous_wrap)
+" Ale
+"nmap <silent> J <Plug>(ale_next_wrap)
+"nmap <silent> K <Plug>(ale_previous_wrap)
+" coc.nvim
+nmap <silent> J <Plug>(coc-diagnostic-next)
+nmap <silent> K <Plug>(coc-diagnostic-prev)
 
 let mapleader = ','
 
@@ -162,6 +181,27 @@ nmap <leader>ev :e! ~/.vimrc<cr>
 nmap <silent> <leader>/ :nohlsearch<cr>
 
 nmap ; :CtrlPBuffer<cr>
+
+" Shortcuts for coc.nvim
+
+" Use tab for trigger completion with characters ahead and navigate.
+" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
 " Filetype Support
 "autocmd BufNewFile,BufRead *.cl set filetype=opencl
