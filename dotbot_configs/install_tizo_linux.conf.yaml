@@ -28,6 +28,9 @@
     ~/.config/pacaur:
         create: true
         path: config/pacaur
+    ~/.config/polybar:
+        create: true
+        path: config/polybar
     #~/.screenrc: screenrc
     ~/.tmux.conf: tmux.conf
     ~/.vimrc: vimrc
