@@ -33,4 +33,7 @@
         path: config/polybar
     #~/.screenrc: screenrc
     ~/.tmux.conf: tmux.conf
+    ~/.config/user-dirs.dirs:
+        create: true
+        path: config/user-dirs.dirs
     ~/.vimrc: vimrc
