@@ -19,11 +19,17 @@
     ~/.config/pacaur:
         create: true
         path: config/pacaur
+    ~/.config/polybar/config_vera:
+        create: true
+        path: config/polybar/config_vera
     #~/.screenrc: screenrc
     ~/.config/termite:
         create: true
         path: config/termite
     ~/.tmux.conf: tmux.conf
+    ~/.config/user-dirs.dirs:
+        create: true
+        path: config/user-dirs.dirs
     ~/.vimrc: vimrc
 #- shell:
     #- git update-submodules # after linking ~/.gitconfig
