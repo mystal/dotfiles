@@ -8,28 +8,15 @@ call plug#begin('~/.vim/bundle')
 Plug 'bling/vim-airline'
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1
-"Plug 'w0rp/ale'
-"let g:ale_linters = {'rust': ['rls', 'cargo']}
-"let g:ale_sign_error = '⮿'
-"let g:ale_sign_info = '🛈'
-"let g:ale_sign_warning = '⯅'
-"let g:ale_rust_cargo_use_clippy = executable('cargo-clippy')
-"let g:ale_rust_rls_executable = 'ra_lsp_server'
-"let g:ale_rust_rls_toolchain = ''
 Plug 'jiangmiao/auto-pairs'
 Plug 'chriskempson/base16-vim'
-Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' }
+Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-commentary'
 Plug 'OrangeT/vim-csharp'
-" TODO: Replace ctrlp with fzf?
-"Plug 'ctrlpvim/ctrlp.vim'
-"let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
-"let g:ctrlp_use_caching = 0
 "Plug 'ryanoasis/vim-devicons'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'editorconfig/editorconfig-vim'
-"Plug 'junegunn/fzf.vim'
 "Plug 'mhinz/vim-grepper'
 Plug 'Yggdroot/indentLine'
 "Plug 'airblade/vim-gitgutter'
@@ -40,7 +27,6 @@ Plug 'joshdick/onedark.vim'
 Plug 'sheerun/vim-polyglot'
 " Don't conceal syntax in Markdown files.
 let g:vim_markdown_conceal = 0
-"Plug 'klen/python-mode'
 "Plug 'tpope/vim-sensible'
 "Plug 'trusktr/seti.vim'
 "Plug 'mhinz/vim-startify'
@@ -48,8 +34,6 @@ Plug 'tpope/vim-surround'
 "Plug 'wellle/targets.vim'
 Plug 'jacoborus/tender.vim'
 "Plug 'lluchs/vim-wren'
-"Plug 'Valloric/YouCompleteMe'
-"let g:ycm_autoclose_preview_window_after_insertion=1
 "Plug 'KabbAmine/zeavim.vim'
 
 call plug#end()
@@ -219,18 +203,16 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-" Use K to show documentation in preview window.
-" nnoremap <silent> K :call <SID>show_documentation()<CR>
+" Use gk to show documentation in preview window.
+nmap <silent> gk :call <SID>show_documentation()<CR>
 
-" function! s:show_documentation()
-"   if (index(['vim','help'], &filetype) >= 0)
-"     execute 'h '.expand('<cword>')
-"   else
-"     call CocAction('doHover')
-"   endif
-" endfunction
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
 
 " Filetype Support
-"autocmd BufNewFile,BufRead *.cl set filetype=opencl
-"autocmd BufNewFile,BufRead *.gradle set filetype=groovy
 autocmd BufNewFile,BufRead *.tex set spell
