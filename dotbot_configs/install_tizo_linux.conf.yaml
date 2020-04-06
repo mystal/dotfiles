@@ -37,3 +37,4 @@
         create: true
         path: config/user-dirs.dirs
     ~/.vimrc: vimrc
+    ~/.xinitrc: xinitrc_tizo
