@@ -5,3 +5,5 @@
 	default = simple
 [core]
 	excludesfile = /home/mystal/.gitignore_global
+[pull]
+	ff = only
