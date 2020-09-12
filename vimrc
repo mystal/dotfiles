@@ -22,17 +22,21 @@ Plug 'Yggdroot/indentLine'
 "Plug 'airblade/vim-gitgutter'
 "Plug 'sjl/gundo.vim'
 "Plug 'tpope/vim-markdown'
+"Plug 'terryma/vim-multiple-cursors'
 Plug 'rakr/vim-one'
 Plug 'joshdick/onedark.vim'
 Plug 'sheerun/vim-polyglot'
 " Don't conceal syntax in Markdown files.
 let g:vim_markdown_conceal = 0
+Plug 'ron-rs/ron.vim'
 "Plug 'tpope/vim-sensible'
 "Plug 'trusktr/seti.vim'
 "Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-surround'
 "Plug 'wellle/targets.vim'
 Plug 'jacoborus/tender.vim'
+Plug 'liuchengxu/vista.vim'
+let g:vista_default_executive = 'coc'
 "Plug 'lluchs/vim-wren'
 "Plug 'KabbAmine/zeavim.vim'
 
@@ -75,8 +79,10 @@ colorscheme one
 
 let g:airline_theme='one'
 
+" Reload files modified externally when vim gains focus.
+" See: https://github.com/neovim/neovim/issues/1936#issuecomment-309311829
 set autoread
-autocmd BufWinEnter * checktime
+autocmd FocusGained * checktime
 
 " Behavior
 set laststatus=2
@@ -164,11 +170,11 @@ nmap <leader>s :!
 nmap <leader>w :w<cr>
 nmap <leader>d :bd<cr>
 nmap <leader>ev :e! ~/.vimrc<cr>
+nmap <leader>t :Clap tags<cr>
 nmap <silent> <leader>/ :nohlsearch<cr>
 
 map <C-p> :Clap files<cr>
 nmap ; :Clap buffers<cr>
-"nmap ; :CtrlPBuffer<cr>
 
 " Shortcuts for coc.nvim
 
@@ -213,6 +219,18 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
+
+" Mappings using CoCList:
+" Show all diagnostics.
+" nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
+" Manage extensions.
+" nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
+" Show commands.
+" nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
+" Find symbol of current document.
+" nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
+" Search workspace symbols.
+" nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
 
 " Filetype Support
 autocmd BufNewFile,BufRead *.tex set spell
