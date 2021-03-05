@@ -9,8 +9,11 @@ Plug 'bling/vim-airline'
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1
 Plug 'jiangmiao/auto-pairs'
+" This plugin has a great overview of auto pairing plugins.
+"Plug 'krasjet/auto.pairs'
 Plug 'chriskempson/base16-vim'
 Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
+let g:clap_layout = { 'relative': 'editor' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-commentary'
 Plug 'OrangeT/vim-csharp'
@@ -20,9 +23,9 @@ Plug 'editorconfig/editorconfig-vim'
 "Plug 'mhinz/vim-grepper'
 Plug 'Yggdroot/indentLine'
 "Plug 'airblade/vim-gitgutter'
-"Plug 'sjl/gundo.vim'
 "Plug 'tpope/vim-markdown'
 "Plug 'terryma/vim-multiple-cursors'
+"Plug 'simnalamburt/vim-mundo'
 Plug 'rakr/vim-one'
 Plug 'joshdick/onedark.vim'
 Plug 'sheerun/vim-polyglot'
@@ -32,6 +35,8 @@ Plug 'ron-rs/ron.vim'
 "Plug 'tpope/vim-sensible'
 "Plug 'trusktr/seti.vim'
 "Plug 'mhinz/vim-startify'
+" An alternative to surround. Try it out.
+"Plug 'machakann/vim-sandwich'
 Plug 'tpope/vim-surround'
 "Plug 'wellle/targets.vim'
 Plug 'jacoborus/tender.vim'
