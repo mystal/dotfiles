@@ -5,5 +5,6 @@
 	default = simple
 [core]
 	excludesfile = /home/mystal/.gitignore_global
+	pager = delta
 [pull]
 	ff = only
