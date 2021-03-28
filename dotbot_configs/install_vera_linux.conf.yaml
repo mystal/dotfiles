@@ -19,7 +19,7 @@
     ~/.config/pacaur:
         create: true
         path: config/pacaur
-    ~/.config/polybar/config_vera:
+    ~/.config/polybar/config:
         create: true
         path: config/polybar/config_vera
     #~/.screenrc: screenrc
