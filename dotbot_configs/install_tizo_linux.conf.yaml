@@ -32,6 +32,9 @@
         create: true
         path: config/polybar
     #~/.screenrc: screenrc
+    ~/.config/starship.toml:
+        create: true
+        path: config/starship.toml
     ~/.tmux.conf: tmux.conf
     ~/.config/user-dirs.dirs:
         create: true
