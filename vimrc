@@ -14,6 +14,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'chriskempson/base16-vim'
 Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
 let g:clap_layout = { 'relative': 'editor' }
+let g:clap_open_preview = 'never'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-commentary'
 Plug 'OrangeT/vim-csharp'
@@ -28,6 +29,7 @@ Plug 'Yggdroot/indentLine'
 "Plug 'simnalamburt/vim-mundo'
 Plug 'rakr/vim-one'
 Plug 'joshdick/onedark.vim'
+" Plug 'meain/vim-package-info'
 Plug 'sheerun/vim-polyglot'
 " Don't conceal syntax in Markdown files.
 let g:vim_markdown_conceal = 0
@@ -42,6 +44,7 @@ Plug 'tpope/vim-surround'
 Plug 'jacoborus/tender.vim'
 Plug 'liuchengxu/vista.vim'
 let g:vista_default_executive = 'coc'
+Plug 'liuchengxu/vim-which-key'
 "Plug 'lluchs/vim-wren'
 "Plug 'KabbAmine/zeavim.vim'
 
@@ -92,6 +95,7 @@ autocmd FocusGained * checktime
 " Behavior
 set laststatus=2
 
+set timeoutlen=500
 set updatetime=300
 
 set title
@@ -151,6 +155,9 @@ set nobackup
 nnoremap <silent> j gj
 nnoremap <silent> k gk
 
+nnoremap <silent> <tab> :bnext<cr>
+nnoremap <silent> <s-tab> :bprevious<cr>
+
 noremap <C-a> ^
 noremap <C-e> $
 noremap! <C-a> <home>
@@ -169,6 +176,8 @@ nmap <silent> J <Plug>(coc-diagnostic-next)
 nmap <silent> K <Plug>(coc-diagnostic-prev)
 
 let mapleader = ','
+
+nnoremap <silent> <leader> :WhichKey ','<CR>
 
 nmap <leader>s :!
 
