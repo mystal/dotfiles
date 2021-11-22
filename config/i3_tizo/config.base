@@ -172,15 +172,24 @@ bindsym $mod+r mode "resize"
 #    # $i3-theme-bar
 #}
 
+# Screen brightness buttons
 bindsym XF86MonBrightnessUp exec --no-startup-id brightness_control.py up
 bindsym XF86MonBrightnessDown exec --no-startup-id brightness_control.py down
 
+# Volume buttons
 bindsym XF86AudioMute exec --no-startup-id volume_control.sh mute
 bindsym XF86AudioRaiseVolume exec --no-startup-id volume_control.sh up
 bindsym XF86AudioLowerVolume exec --no-startup-id volume_control.sh down
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
+# Take a screenshot
 bindsym $mod+shift+s exec --no-startup-id ~/.local/bin/screenshot.sh
+
+# Dunst shortcuts
+bindsym ctrl+space exec --no-startup-id dunstctl close
+bindsym ctrl+shift+space exec --no-startup-id dunstctl close-all
+bindsym ctrl+grave exec --no-startup-id dunstctl history-pop
+bindsym ctrl+shift+period exec --no-startup-id dunstctl context
 
 # $i3-theme-window
 
