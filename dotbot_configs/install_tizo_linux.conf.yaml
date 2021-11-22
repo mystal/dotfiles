@@ -6,9 +6,9 @@
     #~/.config/compton.conf:
     #    create: true
     #    path: config/compton.conf
-    #~/.config/dunst:
-    #    create: true
-    #    path: config/dunst
+    ~/.config/dunst:
+        create: true
+        path: config/dunst
     #~/.dotfiles: ''
     #~/.config/fish:
     #    create: true
