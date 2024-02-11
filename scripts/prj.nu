@@ -8,11 +8,16 @@ def main [] {
   } else {
     "~/dev"
   } | path expand
-  # print $projects_dir
 
   let git_dirs = ^fd -t d -H --no-ignore-vcs '^.git$' $projects_dir
     | lines
     | each {|e| $e | path relative-to $projects_dir | path dirname }
 
-  $git_dirs | to text | ^sk
+  let output = $git_dirs | to text | ^sk | complete
+  if $output.exit_code > 0 {
+    exit 1
+  }
+
+  let dir = $output.stdout | str trim -r
+  print ($projects_dir | path join $dir)
 }
