@@ -1,7 +1,20 @@
 #!/usr/bin/env nu
 
 def main [] {
-  # TODO: Check that fd and sk binaries are in $PATH
+  # Check that fd and either sk or fzf binaries are in $PATH.
+  if (which ^fd | is-empty) {
+    print 'fd is required but was not found in $PATH'
+    exit 1
+  }
+
+  let fzf_bin = if not (which ^sk | is-empty) {
+    'sk'
+  } else if not (which ^fzf | is-empty) {
+    'fzf'
+  } else {
+    print 'One of sk or fzf is required but neither was found in $PATH'
+    exit 1
+  }
 
   let projects_dir = if PROJECTS_DIR in $env {
     $env.PROJECTS_DIR
@@ -13,7 +26,7 @@ def main [] {
     | lines
     | each {|e| $e | path relative-to $projects_dir | path dirname }
 
-  let output = $git_dirs | to text | ^sk | complete
+  let output = $git_dirs | to text | ^$fzf_bin | complete
   if $output.exit_code > 0 {
     exit 1
   }
