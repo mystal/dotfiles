@@ -1,5 +1,8 @@
 #!/usr/bin/env nu
 
+# Inspired by this Reddit post:
+# https://www.reddit.com/r/fishshell/comments/152zkrz/prj_a_simple_fish_function_for_jumping_to_projects/
+
 def main [] {
   # Check that fd and either sk or fzf binaries are in $PATH.
   if (which ^fd | is-empty) {
