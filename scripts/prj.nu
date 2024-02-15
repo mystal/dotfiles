@@ -36,5 +36,5 @@ def main [] {
   }
 
   let dir = $output.stdout | str trim -r
-  print ($projects_dir | path join $dir)
+  print -n ($projects_dir | path join $dir)
 }
