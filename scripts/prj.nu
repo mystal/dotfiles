@@ -28,8 +28,8 @@ def main [] {
   let git_dirs = ^fd -t d -H --no-ignore-vcs '^.git$' $projects_dir
     | lines
     | each {|e| $e | path relative-to $projects_dir | path dirname }
+    | sort
 
-  # TODO: Sort git_dirs before passing to fzf_bin?
   let output = $git_dirs | to text | ^$fzf_bin | complete
   if $output.exit_code > 0 {
     exit 1
